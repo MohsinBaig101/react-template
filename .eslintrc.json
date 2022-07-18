@@ -1,0 +1,85 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": true,
+        "requireConfigFile": false,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "babelOptions": {
+            "configFile": "./.babelrc"
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:import/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "react-hooks",
+        "import",
+        "testing-library",
+        "prettier"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        // allow jsx syntax in js files (for next.js project)
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/no-unresolved": [
+            2,
+            {
+                "commonjs": true,
+                "amd": true
+            }
+        ],
+        "import/named": 2,
+        "import/namespace": 2,
+        "import/default": 2,
+        "import/export": 2,
+        "testing-library/await-async-query": "error",
+        "testing-library/no-await-sync-query": "error",
+        "testing-library/no-debugging-utils": "warn",
+        "testing-library/no-dom-import": "off",
+        "import/no-named-as-default": 0,
+        "prettier/prettier": "error"
+    },
+    "settings": {
+        // "import/resolver": "foo",
+        "import/extensions": [
+            ".js",
+            ".jsx"
+        ],
+        "react": {
+            "version": "detect"
+        }
+    },
+    "env": {
+        "browser": true,
+        "amd": true,
+        "jest": true,
+        "node": true,
+        "es2021": true
+    }
+}
